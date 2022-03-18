@@ -2,8 +2,6 @@ package DEQUEUE;
 
 import java.util.ArrayDeque;
 
-import javax.management.Query;
-
 public class SlidingWindowMaximum {
     
     public static void slide(int a[], int k, int n){

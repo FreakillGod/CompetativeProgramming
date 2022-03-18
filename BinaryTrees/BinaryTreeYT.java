@@ -246,10 +246,46 @@ public class BinaryTreeYT {
         return Math.max(left,right)+1;
     }
 
-    //LCA=lowest common ansister
-    public static void LCA(){
+    //lowest common ansister
+    public static Node LCA(Node root, int first, int second){
+        if(root==null) return null;
 
+        Node left=LCA(root.left, first, second);
+        Node right=LCA(root.right, first, second);
+
+        if(left==null) return right;
+        if(right==null) return left;
+
+        return root;
     }
+    //LCA for binarysearch tree
+    public static Node LCAforSortedTree(Node root,int first, int second){
+        Node curr=head;
+        while(curr!=null){
+            if(first<curr.data || second<curr.data){
+                curr=curr.left;
+            }
+            else if(first<curr.data || second<curr.data){
+                curr=curr.right;
+            }else{
+                return curr;
+            }
+        }
+        return curr;
+    }
+
+    public static void findPair(Node root, int k){
+        
+    }
+
+    public static void verticalTraversal(Node root){
+        
+    }
+
+    public static void BurnTreeFromNode(Node root,Node lef){
+        
+    }
+    
 
     public static void main(String[] args) {
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
